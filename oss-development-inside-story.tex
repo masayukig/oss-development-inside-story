@@ -173,7 +173,7 @@
             from HPE ...''}
           \end{scriptsize}
       \end{itemize}
-    \item 仕事/肩書: Senior Software Engineer/Open Source Programmer
+    \item 仕事/肩書: Senior Software Engineer/Open Source Programmer (海外出張)
       \begin{itemize}
         \begin{scriptsize}
         \item \href{https://www.openstack.org/}{OpenStack}
@@ -188,17 +188,15 @@
           \href{https://github.com/masayukig}{github.com/masayukig}
         \end{scriptsize}
       \end{itemize}
-    \item Books \includegraphics[scale=0.1]{OpenStack_Integration_book.png}~\includegraphics[scale=0.1]{InfraCI_book.png}
+    \item Books \includegraphics[height=7mm]{OpenStack_Integration_book.png}~\includegraphics[height=7mm]{InfraCI_book.png}
       \begin{itemize}
       \item \href{https://www.amazon.co.jp/dp/4798139785/}{\scriptsize{OpenStack
         Cloud Integration (OpenStack クラウドインテグレーション)}}
       \item \href{https://www.amazon.co.jp/dp/4798155128/}{\scriptsize{Infra CI
         Pragmatic Guide - Ansible/GitLab (インフラ CI 実践ガイド)}} (as a reviewer)
       \end{itemize}
-    \item Hobby
-      \begin{itemize}
-      \item Bike, Diet, Clouds, etc. \\\includegraphics[scale=0.05]{server_front.jpg}
-      \end{itemize}
+    \item Hobby: Bike(BMC SLR02), Diet(Low-carb), Clouds(OpenStack...), etc.
+    \includegraphics[height=20mm]{my-bike.jpg}~\includegraphics[height=20mm]{server_front.jpg}~\includegraphics[height=20mm]{my-weight.png}
   \end{itemize}
 \end{frame}
 
@@ -206,8 +204,9 @@
 \begin{frame}
   \frametitle{今日のゴール}
   \begin{itemize}
-    \item OpenStack/OSS 開発手法・使われているツールをざっくり理解する
-    \item 開発していく上でのハマりどころを理解する
+    \item OpenStack/OSS 開発手法・使われているツールを理解する(ざっくりと)
+    \item 開発上のハマりどころを理解する
+    \item OSS開発の面白さを理解して
   \end{itemize}
 \end{frame}
 
@@ -240,13 +239,101 @@
   \end{enumerate}
 \end{frame}
 
+\begin{frame}
+  \frametitle{コミュニケーションツール}
+  \begin{enumerate}
+    \item IRC on Freenode: \#openstack-*(dev, nova, glance, cinder, keystone, qa, ...) \url{https://freenode.net/}
+    \item Mailing List: \url{http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-dev}
+    \item Gerrit: \url{https://review.openstack.org/}
+    \item StoryBoard: \url{https://storyboard.openstack.org/}
+    \item Launchpad: \url{https://launchpad.net}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{StoryBoard によるプロジェクト管理 - StoryBoard とは？}
+  \begin{enumerate}
+    \item OpenStack開発の標準タスク（≒ バグ管理）ツール
+    \item スクラッチ作成
+    \item アーキテクチャ（Frontend: JS/Angular, Backend: Python/Pecan)
+    \item 100\% open source (Apache2.0)
+  \end{enumerate}
+  \centering\includegraphics[scale=0.2]{storyboard.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Gerrit レビューシステム - Gerrit とは？}
+  \begin{enumerate}
+    \item Android 開発にて利用されている
+    \item 開発言語： Java
+    \item 100\% open source
+    \item Pull Request 方式ではなく、中央リポジトリにパッチをレビューし、マージしていく
+    \item TODO: 写真を入れる
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Zuul による継続的インテグレーション - Zuul とは？}
+  \begin{enumerate}
+    \item 自動テストによるゲートを設けて、常に正しく動作するコードのみがマージされるようにする
+    \item Ansible による CI/CD
+    \item プロジェクトをまたがった依存関係もテストすることができる
+  \end{enumerate}
+  \centering\includegraphics[scale=0.2]{zuul-status.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{開発裏話}
+  \begin{enumerate}
+    \item パッチがなかなかマージされない！その理由とは？
+      \begin{enumerate}
+        \item プロジェクト規模≒ステークホルダの数
+        \item コミュニケーション不足
+        \item レビュー者数の不足
+        \item TODO: レビュー者数推移のグラフを入れる
+      \end{enumerate}
+    \item 不安定なCI
+      \begin{enumerate}
+        \item CIも完璧ではない
+        \item 迅速な対応が必要
+        \item CIで動いてないものは腐ってくる
+        \item TODO: recheckの話、elastic-recheckの話recheck推移のグラフ？
+      \end{enumerate}
+    \item コミュニケーションスキル・英語(世界標準)の重要性
+      \begin{enumerate}
+        \item 議論
+        \item 職探し（日本で開発者(プログラマ)職 困難）
+        \item 楽しさ（健康には気をつけましょう！(笑)）
+      \end{enumerate}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{コミュニケーションスキル・英語(世界標準)の重要性}
+  \centering\includegraphics[scale=0.28]{tweet-suse.png}
+  \centering\includegraphics[scale=0.28]{tweet-oui.png}
+\end{frame}
+
 \section{Conclusion}
 \begin{frame}
   \frametitle{Conclusion}
   \begin{itemize}
-    \item OpenStack 開発では、Gerrit, StoryBoard, Zuul 等様々なOSSが使われていて、皆さんの開発でも利用することができます。
+    \item Gerrit, StoryBoard, Zuul 等様々なOSSは、オープンソース開発以外でも利用可能です！
     \item 英語重要
-    \item OSS 開発は楽しい！皆さん参加しましょう！
+    \item OSS 開発は（大変なこともあるけど）楽しい！皆さん参加しましょう！
+  \end{itemize}
+  Appendix
+  \begin{itemize}
+      \item Slides: \url{https://github.com/masayukig/oss-development-inside-story}
+      \item Contact info: \texttt{masayukig on
+        \href{https://freenode.net/}{Freenode},
+        \href{https://github.com/masayukig}{GitHub},
+        \href{https://twitter.com/masayukig}{Twitter},
+        \href{https://www.linkedin.com/in/masayukig/}{LinkedIn}}
+      \item StoryBoad: \url{https://docs.openstack.org/infra/system-config/storyboard.html}
+      \item Gerrit: \url{https://www.gerritcodereview.com/}
+      \item Zuul: \url{https://zuul-ci.org/}
+      \item Non-native English speakers in Open Source communities: \url{http://bit.ly/esl-yvr}
   \end{itemize}
 \end{frame}
 
