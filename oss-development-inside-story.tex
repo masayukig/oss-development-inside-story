@@ -232,13 +232,21 @@
 \section{Workflow of OpenStack development}
 \begin{frame}
   \frametitle{OpenStack の開発ワークフロー}
-  \begin{enumerate}
-    \item StoryBoard へ ストーリー登録＆議論 (Option)
-    \item パッチ作成、Gerrit でパッチ登録
-    \item Zuul にて CI 自動実行
-    \item Gerrit 上で レビュー
-    \item CI再度実行後、メインリポジトリへマージ
-  \end{enumerate}
+  \url{https://docs.openstack.org/infra/manual/developers.html}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{enumerate}
+        \item StoryBoard へ ストーリー登録＆議論 (Option)
+        \item パッチ作成、Gerrit でパッチ登録
+        \item Zuul にて CI 自動実行
+        \item Gerrit 上で レビュー
+        \item CI再度実行後、メインリポジトリへマージ
+      \end{enumerate}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \centering\includegraphics[height=45mm]{images/code_review.png}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
