@@ -206,9 +206,8 @@
 \begin{frame}
   \frametitle{今日のゴール}
   \begin{itemize}
-    \item OpenStack/OSS 開発手法・使われているツールを理解する(ざっくりと)
-    \item 開発上のハマりどころを理解する
-    \item OSS開発の面白さを理解して
+    \item OpenStack/OSS 開発手法・使われているツールを理解(ざっくりと)
+    \item OSS開発のハマりどころ・面白さを理解
   \end{itemize}
 \end{frame}
 
@@ -252,13 +251,13 @@
 \section{Communication tools}
 \begin{frame}
   \frametitle{コミュニケーションツール}
-  \begin{enumerate}
+  \begin{itemize}
     \item IRC on Freenode: \#openstack-*(dev,nova,glance,qa,..) \url{https://freenode.net/}
     \item Mailing List: \url{http://lists.openstack.org/}
     \item StoryBoard: \url{https://storyboard.openstack.org/}
     \item Gerrit: \url{https://review.openstack.org/}
     \item Launchpad: \url{https://launchpad.net}
-  \end{enumerate}
+  \end{itemize}
   \centering
   \includegraphics[height=35mm]{images/freenode.png}
   \includegraphics[height=35mm]{images/openstack-ml.png}
@@ -267,24 +266,24 @@
 
 \begin{frame}
   \frametitle{StoryBoard によるプロジェクト管理 - StoryBoard とは？}
-  \begin{enumerate}
+  \begin{itemize}
     \item OpenStack開発の標準タスク（≒ バグ管理）ツール
     \item スクラッチ作成
     \item アーキテクチャ（Frontend: JS/Angular, Backend: Python/Pecan)
     \item 100\% open source (Apache2.0)
-  \end{enumerate}
+  \end{itemize}
   \centering\includegraphics[scale=0.2]{images/storyboard.png}
 \end{frame}
 
 \begin{frame}
   \frametitle{Gerrit レビューシステム - Gerrit とは？}
-  \begin{enumerate}
+  \begin{itemize}
     \item Android 開発にて利用されている
     \item 開発言語： Java
     \item 100\% open source
     \item Pull Request 方式ではなく、中央リポジトリにパッチをレビューし、マージしていく
     \item ターミナルで動作するクライアントもあります ＞ Gertty: \url{https://gertty.readthedocs.io/}
-  \end{enumerate}
+  \end{itemize}
   \centering
   \includegraphics[height=40mm]{images/gerritcodereview-com.png}
   \includegraphics[height=40mm]{images/review-openstack-org.png}
@@ -292,22 +291,22 @@
 
 \begin{frame}
   \frametitle{参考：Gertty - Gerrit レビューシステム }
-  \begin{enumerate}
+  \begin{itemize}
     \item ターミナルで動作するクライアント
     \item \url{https://gertty.readthedocs.io/}
     \item デモ
-  \end{enumerate}
+  \end{itemize}
   \centering
   \includegraphics[height=60mm]{images/gertty.png}
 \end{frame}
 
 \begin{frame}
   \frametitle{Zuul による継続的インテグレーション - Zuul とは？}
-  \begin{enumerate}
+  \begin{itemize}
     \item 自動テストによるゲートを設けて、常に正しく動作するコードのみがマージされるようにする
     \item Ansible による CI/CD
     \item プロジェクトをまたがった依存関係もテストすることができる
-  \end{enumerate}
+  \end{itemize}
   \centering\includegraphics[scale=0.2]{images/zuul-status.png}
 \end{frame}
 
@@ -316,32 +315,40 @@
   \frametitle{開発裏話}
   \begin{enumerate}
     \item パッチがなかなかマージされない！その理由とは？
-      \begin{enumerate}
-        \item プロジェクト規模≒ステークホルダの数
-        \item コミュニケーション不足
-        \item レビュー者数の不足
-        \item TODO: レビュー者数推移のグラフを入れる
-      \end{enumerate}
     \item 不安定なCI
-      \begin{enumerate}
-        \item CIも完璧ではない
-        \item 迅速な対応が必要
-        \item CIで動いてないものは腐ってくる
-        \item TODO: recheckの話、elastic-recheckの話recheck推移のグラフ？
-      \end{enumerate}
     \item コミュニケーションスキル・英語(世界標準)の重要性
-      \begin{enumerate}
-        \item 議論
-        \item 職探し（日本で開発者(プログラマ)職 困難）
-        \item 楽しさ（健康には気をつけましょう！(笑)）
-      \end{enumerate}
   \end{enumerate}
 \end{frame}
 
 \begin{frame}
-  \frametitle{コミュニケーションスキル・英語(世界標準)の重要性}
-  \centering\includegraphics[scale=0.28]{images/tweet-suse.png}
-  \centering\includegraphics[scale=0.28]{images/tweet-oui.png}
+  \frametitle{1. パッチがなかなかマージされない！その理由とは？ - 開発裏話}
+  \begin{itemize}
+    \item プロジェクト規模≒ステークホルダの数
+    \item コミュニケーション不足
+    \item レビュー者数の不足
+    \item TODO: レビュー者数推移のグラフを入れる
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{2. 不安定なCI - 開発裏話}
+  \begin{itemize}
+    \item CIも完璧ではない
+    \item 迅速な対応が必要
+    \item CIで動いてないものは腐ってくる
+    \item TODO: recheckの話、elastic-recheckの話recheck推移のグラフ？
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{3. コミュニケーションスキル・英語(世界標準)の重要性 - 開発裏話}
+  \begin{itemize}
+    \item 議論
+    \item 職探し（日本で開発者(プログラマ)職 困難）
+    \item 楽しさ（健康には気をつけましょう！(笑)）
+  \end{itemize}
+  \centering\includegraphics[height=60mm]{images/tweet-suse.png}
+  \centering\includegraphics[height=60mm]{images/tweet-oui.png}
 \end{frame}
 
 \section{Conclusion}
