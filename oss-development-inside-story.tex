@@ -326,18 +326,29 @@
     \item プロジェクト規模≒ステークホルダの数
     \item コミュニケーション不足
     \item レビュー者数の不足
-    \item TODO: レビュー者数推移のグラフを入れる
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{1. (続き) その理由とは？ - レビュー者数の不足}
+  \centering\includegraphics[height=70mm]{images/project-overview.png}
+  \url{http://activity.openstack.org/dash/browser/scr.html}
 \end{frame}
 
 \begin{frame}
   \frametitle{2. 不安定なCI - 開発裏話}
   \begin{itemize}
+    \item CIで動いてないものは腐ってくる
     \item CIも完璧ではない
     \item 迅速な対応が必要
-    \item CIで動いてないものは腐ってくる
-    \item TODO: recheckの話、elastic-recheckの話recheck推移のグラフ？
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{2. 不安定なCI (続き) - Elastic Recheck}
+    Bugとの関連付けをログファイルのシグネチャと紐付けて自動的に！
+  \centering\includegraphics[height=65mm]{images/elastic-recheck.png}
+  \url{http://status.openstack.org/elastic-recheck/}
 \end{frame}
 
 \begin{frame}
