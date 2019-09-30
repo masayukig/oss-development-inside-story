@@ -99,11 +99,11 @@
         }
     {Masayuki Igawa}
 }
-\date{\href{https://events.opensuse.org/conference/summitasia18/program/proposal/2101}{October 28, 2018}}
+\date{\href{https://events.opensuse.org/conferences/summitasia19/program/proposals/2762}{October 6, 2019}}
 \def\place#1{\def\@place{#1}}
-\place{\href{https://www.ospn.jp/osc2018-fall/}{@オープンソースカンファレンス 2018 Tokyo/Fall}}
+\place{\href{https://events.opensuse.org/conferences/summitasia19}{@openSUSE.Asia Summit 2019}}
 
-\vspace*{30pt}
+%\vspace*{30pt}
 \title[oss-development-inside-story
   \hspace{4em}\insertframenumber/\inserttotalframenumber]{How to Participate Open Source development\\
   - Open Source development tooling and community in the upstream -}
@@ -127,8 +127,8 @@
   \titlepage{}
   \centering
   \@place \par
-  \href{http://bit.ly/osc-2018fall-oss}{http://bit.ly/osc-2018fall-upstream},
-  \vspace{1em}
+  \href{https://github.com/masayukig/oss-development-inside-story}{https://github.com/masayukig/oss-development-inside-story}
+  %\vspace{1em}
   \begin{flushright}
     \tiny\href{https://creativecommons.org/licenses/by/4.0/}{This work
       is licensed under a Creative Commons Attribution 4.0
@@ -141,42 +141,34 @@
 \begin{frame}
   \frametitle{Agenda}
   \begin{enumerate}
-    \item 自己紹介
-    \item 今日のゴール
-    \item OpenStack とは？
-    \item 開発ワークフロー
-    \item コミュニケーションツール
-    \item StoryBoard によるプロジェクト管理
-    \item Gerrit によるレビュー
-    \item Zuul による継続的インテグレーション
-    \item 開発裏話
-    \item まとめ
+    \item Who am I?
+    \item Today's Goal
+    \item What is Open Source?
+    \item Examples
+    \item What is OpenStack?
+    \item Development Work Flow
+    \item Tools
+    \item True Stories
+    \item Summary
   \end{enumerate}
 \end{frame}
 
 \section{DISCLAIMER}
 \begin{frame}
   \frametitle{DISCLAIMER}
-  \Huge{\bf{この内容は個人の見解であり、所属する組織・団体を代表するものではありません。}}
+  \Huge{\bf{These slides are my own opinion}}
 \end{frame}
 
-\section{Who I am?}
+\section{Who am I?}
 \begin{frame}
-  \frametitle{Who I am?}
+  \frametitle{Who am I?}
   \begin{itemize}
-    \item 所属企業：1998.4-2015.12 Traditional IT company in Japan,
-      2016.1-2017.3 HPE -> 2017.3- SUSE/Novell Japan -> 2019 ???(\href{https://www.suse.com/c/further-independence-for-suse/}{\scriptsize{``Further Independence for SUSE''}})
+    \item Company：1998.4-2015.12 Traditional IT company in Japan,\\
+      2016.1-2017.3 HPE -> 2017.3- SUSE -> 2019(\href{https://www.suse.com/c/further-independence-for-suse/}{\scriptsize{``Further Independence for SUSE''}})
       \begin{itemize}
-        \item SUSE OpenStack Cloud QE(Quality Engineering) Team (日本人私一人だけ)
-          \begin{scriptsize}
-        \item[]
-          \href{https://www.suse.com/newsroom/post/2016/suse-acquires-openstack-iaas-and-cloud-foundry-paas-talent-and-technology-assets-from-hpe-to-accelerate-growth-and-entry-into-new-markets/}{``SUSE
-            Acquires OpenStack IaaS and CF PaaS Talent and Tech Assets
-            from HPE ...''}
-          \end{scriptsize}
-        \item openSUSE Tumbleweed ユーザ（仕事＆プライベート）
+        \item SUSE OpenStack Cloud QE(Quality Engineering) Team
       \end{itemize}
-    \item 仕事/肩書: Senior Software Engineer/Open Source Programmer (海外出張)
+    \item Job: Senior Software Engineer/Open Source Programmer
       \begin{itemize}
         \begin{scriptsize}
         \item \href{https://www.openstack.org/}{OpenStack}
@@ -186,28 +178,30 @@
           \href{http://status.openstack.org/openstack-health/}{OpenStack-Health},
           \href{https://docs.openstack.org/developer/subunit2sql/}{Subunit2SQL},
           \href{https://docs.openstack.org/developer/stackviz/}{Stackviz}),
+          \href{https://github.com/mtreinish/stestr}{stestr}
+        \item
           \href{http://stackalytics.com/?user_id=igawa&release=all&metric=all}{stackalytics.com/?user\_id=igawa},
           \href{https://github.com/masayukig}{github.com/masayukig}
         \end{scriptsize}
       \end{itemize}
-    \item Books \includegraphics[height=7mm]{images/OpenStack_Integration_book.png}~\includegraphics[height=7mm]{images/InfraCI_book.png}
+    \item Books \includegraphics[scale=0.2]{images/OpenStack_Integration_book.png}~\includegraphics[scale=0.2]{images/InfraCI_book.png}
       \begin{itemize}
       \item \href{https://www.amazon.co.jp/dp/4798139785/}{\scriptsize{OpenStack
-        Cloud Integration (OpenStack クラウドインテグレーション)}}
+        Cloud Integration (Japanese book)}} (one of the authors)
       \item \href{https://www.amazon.co.jp/dp/4798155128/}{\scriptsize{Infra CI
-        Pragmatic Guide - Ansible/GitLab (インフラ CI 実践ガイド)}} (as a reviewer)
+        Pragmatic Guide - Ansible/GitLab (Japanese book)}} (as a reviewer)
       \end{itemize}
-    \item Hobby: Bike(BMC SLR02), Diet(Low-carb), Clouds(OpenStack...), etc.
-    \includegraphics[height=20mm]{images/my-bike.jpg}~\includegraphics[height=20mm]{images/server_front.jpg}~\includegraphics[height=20mm]{images/my-weight.png}
+    \item Hobby: Bike(BMC SLR02), Clouds(OpenStack...), Diet(Low-carb), etc.
   \end{itemize}
+  \includegraphics[height=20mm]{images/my-bike.jpg}~\includegraphics[height=20mm]{images/server_front.jpg}~\includegraphics[height=20mm]{images/my-weight.png}
 \end{frame}
 
 \section{Goal of today}
 \begin{frame}
-  \frametitle{今日のゴール}
+  \frametitle{Goal of today}
   \begin{itemize}
-    \item OpenStack/OSS 開発手法・使われているツールを理解(ざっくりと)
-    \item OSS開発のハマりどころ・面白さを理解
+    \item Development ways/tools in OpenStack/OSS communities
+    \item To understand points of OSS development, and it's fun
   \end{itemize}
 \end{frame}
 
