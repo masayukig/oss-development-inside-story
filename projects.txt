@@ -1,0 +1,63 @@
+    Adjutant (Operations Processes automation)
+    Barbican (Key Manager service)
+    Blazar (Resource reservation service)
+    Cinder (Block Storage service)
+    Cloudkitty (Rating service)
+    Congress (Governance service)
+    Cyborg (Accelerator Life Cycle Management)
+    Designate (DNS service)
+    Documentation
+    Ec2-Api (EC2 API compatibility layer for OpenStack)
+    Freezer (Backup, Restore, and Disaster Recovery service)
+    Glance (Image service)
+    Heat (Orchestration service)
+    Horizon (Dashboard)
+    I18n
+    Infrastructure
+    Ironic (Bare Metal service)
+    Karbor (Data Protection Orchestration Service)
+    Keystone (Identity service)
+    Kolla
+    Kuryr
+    Loci
+    Magnum (Container Infrastructure Management service)
+    Manila (Shared File Systems service)
+    Masakari (Instances High Availability Service)
+    Mistral (Workflow service)
+    Monasca (Monitoring)
+    Murano (Application Catalog service)
+    Neutron (Networking service)
+    Nova (Compute service)
+    Octavia (Load-balancer service)
+    Openstack Charms (Juju Charms for deployment of OpenStack)
+    Openstack-Chef (Chef cookbooks for life cycle management)
+    Openstack-Helm (Helm charts for OpenStack services)
+    Openstackansible (Ansible playbooks and roles for deployment)
+    Openstackclient (Command-line client)
+    Openstacksdk (Multi-cloud Python SDK for End Users)
+    Oslo (Common libraries)
+    Packaging-Rpm
+    Placement (Placement service)
+    Powervmstackers
+    Puppet Openstack (Puppet modules for deployment)
+    Qinling (Function as a Service)
+    Quality Assurance
+    Rally (Benchmark service)
+    Release Management
+    Requirements
+    Sahara (Data Processing service)
+    Searchlight (Search service)
+    Senlin (Clustering service)
+    Solum (Software Development Lifecycle Automation service)
+    Storlets (Compute inside Object Storage service)
+    Swift (Object Storage service)
+    Tacker (NFV Orchestration service)
+    Telemetry (Telemetry service)
+    Tricircle (Networking automation across Neutron service)
+    Tripleo (Deployment service)
+    Trove (Database service)
+    Vitrage (RCA (Root Cause Analysis) service)
+    Watcher (Infrastructure Optimization service)
+    Winstackers
+    Zaqar (Message service)
+    Zun (Containers service)

@@ -144,10 +144,7 @@
     \item Who am I?
     \item Today's Goal
     \item What is Open Source?
-    \item Examples
-    \item What is OpenStack?
-    \item Development Work Flow
-    \item Tools
+    \item OpenStack as an example
     \item True Stories
     \item How to Participate
     \item Summary
@@ -178,7 +175,7 @@
           (\href{https://docs.openstack.org/developer/tempest/}{Tempest},
           \href{http://status.openstack.org/openstack-health/}{OpenStack-Health},
           \href{https://docs.openstack.org/developer/subunit2sql/}{Subunit2SQL},
-          \href{https://docs.openstack.org/developer/stackviz/}{Stackviz}),
+          \href{https://docs.openstack.org/developer/stackviz/}{Stackviz},etc.),
           \href{https://github.com/mtreinish/stestr}{stestr}
         \item
           \href{http://stackalytics.com/?user_id=igawa&release=all&metric=all}{stackalytics.com/?user\_id=igawa},
@@ -203,22 +200,34 @@
   \Huge{\bf{Introduction}}
 \end{frame}
 
-\section{Goal of today}
+\section{Today's Goal}
 \begin{frame}
-  \frametitle{Goal of today}
+  \frametitle{Today's Goal}
   \begin{itemize}
     \item Development ways/tools in OpenStack/OSS communities
-    \item To understand points of OSS development, and it's fun
+    \item To understand essense of OSS development, and it's fun
   \end{itemize}
+\end{frame}
+
+\section{Open Source Communities?}
+\begin{frame}
+  \frametitle{Open Source Communities?}
+  Led by
+  \begin{itemize}
+    \item Individual (so many, you can find a lot on github)
+    \item One company (openSUSE, Ansible, Elastic Search, ..)
+    \item Foundation (OpenStack, Kubernetes, ..)
+  \end{itemize}
+  There are a lot differences among OSS projects. Let's take a look at the OpenStack community as an example.
 \end{frame}
 
 \section{What is the OpenStack?}
 \begin{frame}
   \frametitle{What is the ``OpenStack''?}
   \begin{itemize}
-    \item Open Source Cloud Operation System: Apache License Version 2.0
-    \item Written in Python
-    \item There are a lot of `OpenStack' projects: \href{http://governance.openstack.org/reference/projects/index.html}{63 projects(2018-10-23)}
+    \item Written in Python, Open Source Cloud Operation System: Apache License 2.0
+    \item One of the top three active OSS communities
+    \item There are a lot of `OpenStack' projects: \href{http://governance.openstack.org/reference/projects/index.html}{63 projects(2019-10-05)}
     \item Released every 6 month: Latest version is called `Queens'
     \item Users: \scriptsize{AT\&T, AA, BBVA, Bloomberg, CERN,
       China Mobile, Gap, VEXXHOST,
@@ -251,13 +260,13 @@
 
 \section{Communication tools}
 \begin{frame}
-  \frametitle{Communication tools}
+  \frametitle{Tools}
   \begin{itemize}
     \item IRC on Freenode: \#openstack-*(dev,nova,glance,qa,..) \url{https://freenode.net/}
     \item Mailing List: \url{http://lists.openstack.org/}
     \item StoryBoard: \url{https://storyboard.openstack.org/}
-    \item Gerrit: \url{https://review.openstack.org/}
     \item Launchpad: \url{https://launchpad.net}
+    \item Gerrit: \url{https://review.openstack.org/}
   \end{itemize}
   \centering
   \includegraphics[height=35mm]{images/freenode.png}
@@ -280,8 +289,7 @@
   \frametitle{Gerrit review system - What's ``Gerrit''}
   \begin{itemize}
     \item Android development community is using it
-    \item Language: Java
-    \item 100\% open source
+    \item Java, 100\% open source
     \item Not Pull Request, submit a patch and merge it into a central repo
     \item A terminal client exists ＞ Gertty: \url{https://gertty.readthedocs.io/}
   \end{itemize}
@@ -325,13 +333,14 @@
   \frametitle{1. It takes a long time to get merged. Reason?}
   \begin{itemize}
     \item Project size ≒ Number of stakeholders
-    \item Less communication
-    \item Less reviewers
+    \item Less communication (sending an email isn't a good idea)
+    \item Less reviewers (next slide)
+    \item Unstable and Slow CI
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{1. cont. Less reviewers}
+  \frametitle{1. Less reviewers (cont. Reason)}
   \centering\includegraphics[height=70mm]{images/project-overview.png}
   \url{http://activity.openstack.org/dash/browser/scr.html}
 \end{frame}
@@ -341,15 +350,16 @@
   \begin{itemize}
     \item Easily rot if the code doesn't work in CI
     \item ``CI'' is not perfect
-    \item Rapid fixing is necessary
+    \item Rapid fixing is necessary - next slide
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{2. cont. - Elastic Recheck}
+  \frametitle{2. Elastic Recheck (cont. Unstable CI)}
     Correlate a bug to a signature in a log, and detect the bug automatically
-  \centering\includegraphics[height=65mm]{images/elastic-recheck.png}
-  \url{http://status.openstack.org/elastic-recheck/}
+  \centering\includegraphics[width=60mm]{images/elastic-recheck.png}
+  \centering\includegraphics[width=75mm]{images/elastic-recheck-source.png}
+  \url{http://status.openstack.org/elastic-recheck/}, \url{https://opendev.org/opendev/elastic-recheck/src/branch/master/queries/1737039.yaml}
 \end{frame}
 
 \begin{frame}
@@ -364,24 +374,21 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{3. cont. English as a second language}
+  \frametitle{3. English as a second language (cont. Communication is important)}
   \begin{itemize}
     \item We have a document: https://docs.openstack.org/doc-contrib-guide/non-native-english-speakers.html
     \item Not only language but also culture (For example: Zensho shimasu (善処します))
   \end{itemize}
-  \centering\includegraphics[height=60mm]{images/tweet-suse.png}
-  \centering\includegraphics[height=60mm]{images/tweet-oui.png}
 \end{frame}
 
 \begin{frame}
   \frametitle{How to participate Open Source development}
   \begin{itemize}
-    \item Find a project which you want to join
+    \item As a study, hobby or job?
+    \item Find a project which you are interested in
     \item Find online/offline mentor(s) and friends
     \item Not only code, submit bugs/issues, documentation, etc.
   \end{itemize}
-  \centering\includegraphics[height=60mm]{images/tweet-suse.png}
-  \centering\includegraphics[height=60mm]{images/tweet-oui.png}
 \end{frame}
 
 \section{Conclusion}
@@ -394,7 +401,7 @@
   \end{itemize}
   Appendix
   \begin{itemize}
-      \item Slides: \url{http://bit.ly/osc-2018fall-oss}{http://bit.ly/osc-2018fall-oss}
+      \item Slides: \url{https://github.com/masayukig/oss-development-inside-story/blob/master/oss-development-inside-story.pdf}
       \item Contact info: \texttt{masayukig on
         \href{https://freenode.net/}{Freenode},
         \href{https://github.com/masayukig}{GitHub},
