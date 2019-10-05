@@ -141,7 +141,7 @@
 \begin{frame}
   \frametitle{Agenda}
   \begin{enumerate}
-    \item Who am I?
+    \item About me
     \item Today's Goal
     \item Open Source Communities
     \item OpenStack as an example
@@ -157,14 +157,14 @@
   \Huge{\bf{These slides are my own opinion}}
 \end{frame}
 
-\section{Who am I?}
+\section{About me}
 \begin{frame}
-  \frametitle{Who am I?}
+  \frametitle{About me}
   \begin{itemize}
     \item Company：1998.4-2015.12 Traditional IT company in Japan,\\
       2016.1-2017.3 HPE -> 2017.3- SUSE -> 2019(\href{https://www.suse.com/c/further-independence-for-suse/}{\scriptsize{``Further Independence for SUSE''}})
       \begin{itemize}
-        \item SUSE OpenStack Cloud QE(Quality Engineering) Team
+        \item SUSE OpenStack Cloud Team
       \end{itemize}
     \item Job: Senior Software Engineer/Open Source Programmer
       \begin{itemize}
@@ -191,7 +191,10 @@
       \end{itemize}
     \item Hobby: Bike(BMC SLR02), Clouds(OpenStack...), Diet(Low-carb), etc.
   \end{itemize}
-  \includegraphics[height=20mm]{images/my-bike.jpg}~\includegraphics[height=20mm]{images/server_front.jpg}~\includegraphics[height=20mm]{images/my-weight.png}
+  \includegraphics[height=20mm]{images/my-bike.jpg}~
+  \includegraphics[height=20mm]{images/server_front.jpg}~
+  \includegraphics[height=20mm]{images/my-small-server.jpg}~
+  \includegraphics[height=20mm]{images/my-weight.png}
 \end{frame}
 
 \section{Introduction}
@@ -205,20 +208,21 @@
   \frametitle{Today's Goal}
   \begin{itemize}
     \item Development ways/tools in OpenStack/OSS communities
-    \item To understand essense of OSS development, and it's fun
+    \item Essense of OSS development, it's fun
   \end{itemize}
 \end{frame}
 
 \section{Open Source Communities?}
 \begin{frame}
   \frametitle{Open Source Communities?}
-  Led by
+  There are a lot styles. All OSS projects are different.\\
+  Examples: Led by
   \begin{itemize}
     \item Individual (so many, you can find a lot on github)
     \item One company (openSUSE, Ansible, Elastic Search, ..)
-    \item Foundation (OpenStack, Kubernetes, ..)
+    \item Foundation (OpenStack, Kubernetes, Linux kernel, ..)
   \end{itemize}
-  There are a lot differences among OSS projects. Let's take a look at the OpenStack community as an example.
+  Let's take a look at the OpenStack community as an example.
 \end{frame}
 
 \section{OpenStack community as an example}
@@ -234,7 +238,7 @@
     \item Written in Python, Open Source Cloud Operation System: Apache License 2.0
     \item One of the top three active OSS communities
     \item There are a lot of `OpenStack' projects: \href{http://governance.openstack.org/reference/projects/index.html}{63 projects(2019-10-05)}
-    \item Released every 6 month: Latest version is called `Queens'
+    \item Released every 6 month: Latest version is called `Train'
     \item Users: \scriptsize{AT\&T, AA, BBVA, Bloomberg, CERN,
       China Mobile, Gap, VEXXHOST,
       Volkswagen, WALMART, etc.. \url{https://www.openstack.org/user-stories/}}
@@ -272,7 +276,10 @@
     \item Mailing List: \url{http://lists.openstack.org/}
     \item StoryBoard: \url{https://storyboard.openstack.org/}
     \item Launchpad: \url{https://launchpad.net}
-    \item Gerrit: \url{https://review.openstack.org/}
+    \item Gerrit: \url{https://review.opendev.org/}
+    \item Gitea: \url{https://opendev.org/openstack/}
+    \item Zuul: \url{https://zuul.openstack.org}
+    \item OpenStack-Health: \url{http://status.openstack.org/openstack-health/}
   \end{itemize}
   \centering
   \includegraphics[height=35mm]{images/freenode.png}
@@ -284,7 +291,7 @@
   \frametitle{Project management by StoryBoard - What's ``StoryBoard''}
   \begin{itemize}
     \item Story management tool developed by the OpenStack community
-    \item Built from scratch
+    \item Built from scratch, \url{https://opendev.org/opendev/storyboard/}
     \item Archtecture: {Frontend: JS/Angular, Backend: Python/Pecan}
     \item 100\% open source (Apache2.0)
   \end{itemize}
@@ -295,7 +302,7 @@
   \frametitle{Gerrit review system - What's ``Gerrit''}
   \begin{itemize}
     \item Android development community is using it
-    \item Java, 100\% open source
+    \item Java, 100\% open source, \url{https://www.gerritcodereview.com}
     \item Not Pull Request, submit a patch and merge it into a central repo
     \item A terminal client exists ＞ Gertty: \url{https://gertty.readthedocs.io/}
   \end{itemize}
@@ -316,27 +323,52 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Gitea - Git with a cup of tea}
+  \begin{itemize}
+    \item A painless self-hosted Git service
+    \item Golang, MIT license
+    \item \url{https://gitea.io}
+  \end{itemize}
+  \centering
+  \includegraphics[width=65mm]{images/gitea-tempest.png}
+  \includegraphics[width=65mm]{images/gitea-tempest-manager.png}
+\end{frame}
+
+\begin{frame}
   \frametitle{Continuous Integration by Zuul - What's ``Zuul''}
   \begin{itemize}
-    \item Set a gate by automated testing - only properly working code can be merged
+    \item \url{https://zuul-ci.org/}
+    \item Set a gate by automated testing - Stop Merging Broken Code    
     \item CI/CD powered by Ansible
-    \item Dependencies across different projects can be tested
+    \item Cross-Project Dependencies can be tested
   \end{itemize}
   \centering\includegraphics[scale=0.2]{images/zuul-status.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Gate Health check by OpenStack Health}
+  \begin{itemize}
+    \item Story management tool developed by the OpenStack community
+    \item Built from scratch, \url{https://opendev.org/openstack/openstack-health/}
+    \item Archtecture: {Frontend: JS/Angular, Backend: Python/Flask}
+    \item 100\% open source (Apache2.0)
+  \end{itemize}
+  \centering\includegraphics[width=60mm]{images/openstack-health1.png}
+  \centering\includegraphics[width=60mm]{images/openstack-health2.png}
 \end{frame}
 
 \section{Inside Story}
 \begin{frame}
   \frametitle{Inside Story}
   \begin{enumerate}
-    \item It takes a long time to get merged. Reason?
-    \item Unstable CI
+    \item Very long time to get merged, why?
+    \item Unstable and Slow CI
     \item Communication is important
   \end{enumerate}
 \end{frame}
 
 \begin{frame}
-  \frametitle{1. It takes a long time to get merged. Reason?}
+  \frametitle{1. Very long time to get merged, why?}
   \begin{itemize}
     \item Project size ≒ Number of stakeholders
     \item Less communication (sending an email isn't a good idea)
@@ -346,22 +378,23 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{1. Less reviewers (cont. Reason)}
+  \frametitle{1. Less reviewers (cont. Why?)}
   \centering\includegraphics[height=70mm]{images/project-overview.png}
   \url{http://activity.openstack.org/dash/browser/scr.html}
 \end{frame}
 
 \begin{frame}
-  \frametitle{2. Unstable CI}
+  \frametitle{2. Unstable and Slow CI}
   \begin{itemize}
     \item Easily rot if the code doesn't work in CI
     \item ``CI'' is not perfect
+    \item Busy neighbors problem
     \item Rapid fixing is necessary - next slide
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{2. Elastic Recheck (cont. Unstable CI)}
+  \frametitle{2. Elastic Recheck (cont. Unstable and Slow CI)}
     Correlate a bug to a signature in a log, and detect the bug automatically
   \centering\includegraphics[width=60mm]{images/elastic-recheck.png}
   \centering\includegraphics[width=75mm]{images/elastic-recheck-source.png}
@@ -397,10 +430,11 @@
 \begin{frame}
   \frametitle{How to participate Open Source development}
   \begin{itemize}
-    \item As a study, hobby or job?
     \item Find a project which you are interested in
     \item Find online/offline mentor(s) and friends
+    \item Understand culture of communities
     \item Not only code, using/testing, submit bugs/issues, documentation, translation, etc.
+    \item As a study, hobby or job?
   \end{itemize}
 \end{frame}
 
